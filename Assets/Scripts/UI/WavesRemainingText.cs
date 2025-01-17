@@ -30,6 +30,7 @@ public class WavesRemainingText : MonoBehaviour
 
     private void UpdateText(EnemyWaveSettings enemyWaveSettings)
     {
+        Debug.Log(Array.IndexOf(_enemyController.EnemiesWavesSettings.Waves, enemyWaveSettings));
         _textMeshProUGUI.text = $"{Array.IndexOf(_enemyController.EnemiesWavesSettings.Waves, enemyWaveSettings) + 1}" +
             $"/{_enemyController.EnemiesWavesSettings.Waves.Length}";
     }

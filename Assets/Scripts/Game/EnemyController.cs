@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour
         GlobalEventManager.SendOnEnemiesSpawnStart(enemyWave);
         var enemies = enemyWave.Waves;
         for (int i = 0; i < enemies.Length; i++)
-        {
+        {            
             StartCoroutine(LaunchWave(enemies[i]));
             yield return new WaitForSeconds(_wavesOffsetInSeconds);
         }
@@ -66,7 +66,8 @@ public class EnemyController : MonoBehaviour
             yield break;
 
         var enemies = enemyWave.Enemies;
-        CurrentWave = enemyWave;
+        CurrentWave = enemyWave; 
+        GlobalEventManager.SendOnEnemyWaveStarts(CurrentWave);
         for (int i = 0; i < enemies.Length; i++)
         {
             _enemySpawner.SpawnEnemy(enemies[i]);

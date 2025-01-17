@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         _animator.SetBool("IsDeath", true);
         _circleCollider.enabled = false;
         _navMeshAgent.enabled = false;
-        Invoke("Death", 1.5f);
+        Invoke("Death", 1.0f);
         if (_isAlive && isKilled)
         {
             _isAlive = false;

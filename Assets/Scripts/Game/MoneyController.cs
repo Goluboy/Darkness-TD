@@ -21,11 +21,12 @@ public class MoneyController : MonoBehaviour
         }
     }
 
-    private int _currentMoney = 100;
+    private int _currentMoney;
 
     private void Awake()
     {
         GlobalEventManager.OnEnemyKilled.AddListener(EnemyKilled);
+        _currentMoney = _startMoney;
     }
 
     public bool SpendMoney(int amount)
